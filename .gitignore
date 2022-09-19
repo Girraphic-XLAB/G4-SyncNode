@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.vs/XLAB OSC Client/v16/.suo
+XLAB OSC Client/.vs/XLAB OSC Client/FileContentIndex/16c843d8-98df-476c-b76a-f1c3433483af.vsidx
+XLAB OSC Client/.vs/XLAB OSC Client/v17/.suo
+XLAB OSC Client/.vs/XLAB OSC Client/FileContentIndex/read.lock
