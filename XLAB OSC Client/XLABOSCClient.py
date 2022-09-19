@@ -24,17 +24,15 @@ OSCPull = config['OSC']['PullCommand']
 #Ascii art title
 XLABFunctions.ASCIITitle()
 
-#Default function for OSC if the value recived does not match any requierments.
+#Default function for OSC if the value recived does not match any dispatcher maps.
 def default_handler(address, *args):
     print(f"DEFAULT {address}: {args}")
 
-#Test python event taking any input starting with /Python
-def testevent(address, int):
-    if int:
-        print(int)
-
+#Dispatcher in charge of mapping reciving OSC Commands to python functions.
 dispatcher = Dispatcher()
-dispatcher.map("/Python" + OSCPull, testevent)
+
+#Dispatcher for pulling in Perforce, simply duplicate this for more OSC commands.
+dispatcher.map("/Python" + OSCPull, XLABFunctions.PerforcePull)
 dispatcher.set_default_handler(default_handler)
 
 ip = OSCIP
