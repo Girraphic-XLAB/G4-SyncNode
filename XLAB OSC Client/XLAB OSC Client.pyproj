@@ -24,7 +24,7 @@
     <Compile Include="ConfigLoader.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="XLABFunctions.py">
+    <Compile Include="FunctionsLibary.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="XLABOSCClient.py" />
