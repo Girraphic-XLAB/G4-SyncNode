@@ -15,5 +15,5 @@ ProjectDir = config['GENERAL']['ProjectRootDir']
 P4Stream = config['GENERAL']['P4StreamDir']
 
 
-PerforceSync = 'p4 sync -q ' + ProjectDir + '\... #head'
-PerforceForceSync = 'p4 sync -f -q ' + ProjectDir + '\... #head'
+PerforceSync = 'p4 sync -q ' + ProjectDir + '\...#head'
+PerforceForceSync = 'p4 sync -f -q ' + ProjectDir + '\...#head'
