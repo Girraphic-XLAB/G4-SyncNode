@@ -22,6 +22,7 @@ dispatcher = Dispatcher()
 #Dispatcher for pulling in Perforce, simply duplicate this for more OSC commands.
 dispatcher.map("/Python" + ConfigLoader.OSCSync, FunctionsLibary.PerforceSync)
 dispatcher.map("/Python" + ConfigLoader.OSCForceSync, FunctionsLibary.PerforceForceSync)
+dispatcher.map("/Python" + ConfigLoader.OSCShaderDelete, FunctionsLibary.DeleteShaderCache)
 dispatcher.set_default_handler(default_handler)
 
 
