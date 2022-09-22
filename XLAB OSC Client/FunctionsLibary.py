@@ -13,19 +13,37 @@ def ASCIITitle():
     print(' | | |_ | | | |  _  /|  _  /   / /\ \ |  ___/|  __  | | || |      |______|   > < | |      / /\ \ |  _ < ')
     print(' | |__| |_| |_| | \ \| | \ \  / ____ \| |    | |  | |_| || |____            / . \| |____ / ____ \| |_) |')
     print('  \_____|_____|_|  \_\_|  \_\/_/    \_\_|    |_|  |_|_____\_____|          /_/ \_\______/_/    \_\____/ ')
+    print(' ')
 
+
+#Generic console command function
+def RunConsoleCommand (int, str):
+    if int:
+        PrintLog(str)
+        subprocess.run(str)
+
+#PrintString and log it into the log file
+def PrintLog(str):
+    print(str)
+    if ConfigLoader.EnableDebugging:
+            print('Logged')
 
 
 #Perforce Sync
 def PerforceSync(address, int):
-    if int:
-        print(ConfigLoader.PerforceSync)
-        subprocess.run(ConfigLoader.PerforceSync)
-        print('Sync Sucess.')
+    RunConsoleCommand(int, ConfigLoader.PerforceSync)
+    print('Sync Sucess.')
         
 #Perforce force sync comand
 def PerforceForceSync (address, int):
+    RunConsoleCommand(int, ConfigLoader.PerforceForceSync)
+    print('Force Sync Sucess.')
+
+#Delete Shader cache
+def DeleteShaderCache(address, int):
     if int:
-        print(ConfigLoader.PerforceForceSync)
-        subprocess.run(ConfigLoader.PerforceForceSync)
-        print('Force Sync Sucess.')
+        #FolderList = ['\DerivedDataCache\', '\Intermediate\', '\Saved\']
+        #for i in FolderList:
+               #Command = 'RMDIR ' + ConfigLoader.ProjectDir + i + ' /s /q'
+               #RunConsoleCommand(int, Command)
+
