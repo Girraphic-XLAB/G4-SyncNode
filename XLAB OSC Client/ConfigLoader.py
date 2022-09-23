@@ -30,5 +30,3 @@ PerforceSync = 'p4 sync -q ' + ProjectDir + '\...#head'
 PerforceForceSync = 'p4 sync -f -q ' + ProjectDir + '\...#head'
 PerforceQuery = 'p4 sync -n -q ' + ProjectDir + '\...#head'
 PerforceRevert = 'p4 revert ' + ProjectDir + '\...'
-
-#Other assembled commands
