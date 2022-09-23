@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.3.32804.467
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "XLAB OSC Client", "XLAB OSC Client\XLAB OSC Client.pyproj", "{4E710964-FAE3-4B3A-981C-5656252DB254}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "G4 Sync", "XLAB OSC Client\G4 Sync.pyproj", "{4E710964-FAE3-4B3A-981C-5656252DB254}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

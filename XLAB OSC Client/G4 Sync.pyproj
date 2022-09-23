@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>4e710964-fae3-4b3a-981c-5656252db254</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
-    <StartupFile>XLABOSCClient.py</StartupFile>
+    <ProjectHome>
+    </ProjectHome>
+    <StartupFile>G4Sync.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>XLAB OSC Client</Name>
+    <Name>G4 Sync</Name>
     <RootNamespace>XLAB OSC Client</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -27,7 +28,7 @@
     <Compile Include="FunctionsLibary.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="XLABOSCClient.py" />
+    <Compile Include="G4Sync.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
