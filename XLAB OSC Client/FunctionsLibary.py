@@ -3,6 +3,7 @@ import subprocess
 import shutil
 import os
 import datetime
+import time
 
 #Import config loader to acess variables
 import ConfigLoader
@@ -20,7 +21,7 @@ def ASCIITitle():
 
 
 #Generic console command function
-def RunConsoleCommand (int, str):
+def RunConsoleCommand(int, str):
     if int:
         PrintLog(str)
         subprocess.run(str)
@@ -47,10 +48,14 @@ def PerforceSync(address, int):
   
     
 #Perforce force sync command.
-def PerforceForceSync (address, int):
+def PerforceForceSync(address, int):
     RunConsoleCommand(int, ConfigLoader.PerforceForceSync)
     print('Force Sync Sucess.')
 
+
+#Perforce revert command
+def PerforceRevert(address, int):
+    RunConsoleCommand(int, ConfigLoader.PerforceRevert)
 
 #Delete Shader cache.
 def DeleteShaderCache(address, int):
@@ -72,3 +77,24 @@ def DeleteShaderCache(address, int):
             #If the folder doesn't exist simply skip it.
             else:
                 PrintLog(ConfigLoader.ProjectDir + i + ' Not Found, Skipping.')
+
+
+#Launch Unreal
+def LaunchUnreal(address, int):
+    RunConsoleCommand(int, ConfigLoader.UELaunch)
+
+
+#Sanatise Directory
+def SanatiseDirectory(address, int):
+    if int:
+        if os.path.isdir(ConfigLoader.ProjectDir + '\\'):
+
+            #Print to the user and if enabled also the log file.
+            PrintLog('Deleting: ' + ConfigLoader.ProjectDir + '\\')
+            shutil.rmtree(ConfigLoader.ProjectDir + '\\', ignore_errors=True)
+
+        #If the folder doesn't exist simply skip it.
+        else:
+            PrintLog(ConfigLoader.ProjectDir + '\\' + ' Not Found, Skipping.')
+        time.sleep(5)
+        PerforceForceSync(address, int)
