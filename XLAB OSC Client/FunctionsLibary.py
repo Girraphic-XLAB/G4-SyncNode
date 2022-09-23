@@ -1,5 +1,8 @@
 #Import subprocess for runing console comands
 import subprocess
+import shutil
+import os
+import datetime
 
 #Import config loader to acess variables
 import ConfigLoader
@@ -22,28 +25,50 @@ def RunConsoleCommand (int, str):
         PrintLog(str)
         subprocess.run(str)
 
-#PrintString and log it into the log file
+#Print String and log it into the log file
 def PrintLog(str):
     print(str)
-    if ConfigLoader.EnableDebugging:
-            print('Logged')
+
+    #Is Logging enabled
+    if ConfigLoader.EnableDebugging == 'True':
+
+            #Get current date and time for the log file
+            Now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+            #Write to the log file
+            with open(os.getcwd() + '\\Logs\\' + datetime.datetime.now().strftime('%Y-%m-%d') + '.log', "a+") as text_file:
+                text_file.write(Now + ' > ' + str + '\n')
 
 
 #Perforce Sync
 def PerforceSync(address, int):
     RunConsoleCommand(int, ConfigLoader.PerforceSync)
     print('Sync Sucess.')
-        
-#Perforce force sync comand
+  
+    
+#Perforce force sync command.
 def PerforceForceSync (address, int):
     RunConsoleCommand(int, ConfigLoader.PerforceForceSync)
     print('Force Sync Sucess.')
 
-#Delete Shader cache
+
+#Delete Shader cache.
 def DeleteShaderCache(address, int):
     if int:
-        #FolderList = ['\DerivedDataCache\', '\Intermediate\', '\Saved\']
-        #for i in FolderList:
-               #Command = 'RMDIR ' + ConfigLoader.ProjectDir + i + ' /s /q'
-               #RunConsoleCommand(int, Command)
 
+        #Create a listof the folders to be deleted.
+        FolderList = ['\\DerivedDataCache\\', '\\Intermediate\\', '\\Saved\\']
+
+        #loop through each item in the list.
+        for i in FolderList:
+
+            #Check if the folder exists before deleting it.
+            if os.path.isdir(ConfigLoader.ProjectDir + i):
+
+                #Print to the user and if enabled also the log file.
+                PrintLog('Deleting: ' + ConfigLoader.ProjectDir + i)
+                shutil.rmtree(ConfigLoader.ProjectDir + i)
+
+            #If the folder doesn't exist simply skip it.
+            else:
+                PrintLog(ConfigLoader.ProjectDir + i + ' Not Found, Skipping.')
