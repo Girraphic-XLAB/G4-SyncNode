@@ -11,10 +11,10 @@ Sanatise (This will delete everything and repull from the depo for a fresh start
 Launch the uproject with command line arguments (These are not dynamic, yet.)
 
 ## What still needs to be done:
-Better ini file handling, hardcoded default values to fall back to and specific error message if there is a problem with the config
-2 way communication, at the moment G4 doesn't send any information back to OSC, some useful information might be if an action was a sucsess
-use the -n mode on P4 sync to show mb/number of files to bring current up to date with master (Would be good for debugging)
-Because G4 launches Unreal it has ownership over it and should be able to also kill it, will be useful if Unreal stops responding
+- Better ini file handling, hardcoded default values to fall back to and specific error message if there is a problem with the config
+- 2 way communication, at the moment G4 doesn't send any information back to OSC, some useful information might be if an action was a sucsess
+- use the -n mode on P4 sync to show mb/number of files to bring current up to date with master (Would be good for debugging)
+- Because G4 launches Unreal it has ownership over it and should be able to also kill it, will be useful if Unreal stops responding
 
 ## Where can i get it?
 The brand new Girraphic-Xlab Github: https://github.com/Girraphic-XLAB/G4-SyncNode
