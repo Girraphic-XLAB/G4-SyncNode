@@ -18,3 +18,39 @@ Because G4 launches Unreal it has ownership over it and should be able to also k
 
 ## Where can i get it?
 The brand new Girraphic-Xlab Github: https://github.com/Girraphic-XLAB/G4-SyncNode
+
+
+## How to configure?
+To configure G4 use the included Configuration.ini file, the file is layed out as follows:
+```
+[OSC]
+This is the local ip address of the network adapter you want to use for OSC (This will be your locl IP unless you have multiple nics)
+IncomingIP = 127.0.0.1
+
+#The port OSC should use for reciving
+IncomingPort = 1337
+
+#These are the button address for your OSC program
+#All buttons need to start with /python/ so an example would be /python/Button1
+SyncAddress = /Button1
+ForceSyncAddress = /Button2
+QueryDepo = /Button3
+RevertDir = /Button4
+DeleteShaders = /Button5
+SanatiseDir = /Button6
+LaunchUnreal = /Button7
+
+
+[GENERAL]
+#This is the path to your UE4 editor, change this if you are using a nonstandard install path or differnt version of the editor.
+UnrealDirectory = C:\Program Files\Epic Games\UE_4.27\Engine\Binaries\Win64\UE4Editor.exe
+
+#The directory of your project, this is used for perforce syncing as well as the delete and sanatise commands
+ProjectRootDir = F:\P4V\AR_blueprint_dev
+
+#the Uproject file name, this is used for launching the project
+Uproject = BroadcastBlueprints.uproject
+
+#Enable debugging, this will create log files in the Logs folder containing all the actions you have submitted and any errors.
+DebugLogging = True
+```
