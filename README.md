@@ -1,1 +1,1 @@
-# OSC-Reciver-Node
+# G4 Sync Node
