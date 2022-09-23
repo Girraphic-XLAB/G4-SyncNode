@@ -23,6 +23,9 @@ dispatcher = Dispatcher()
 dispatcher.map("/Python" + ConfigLoader.OSCSync, FunctionsLibary.PerforceSync)
 dispatcher.map("/Python" + ConfigLoader.OSCForceSync, FunctionsLibary.PerforceForceSync)
 dispatcher.map("/Python" + ConfigLoader.OSCShaderDelete, FunctionsLibary.DeleteShaderCache)
+dispatcher.map("/Python" + ConfigLoader.LaunchUnreal, FunctionsLibary.LaunchUnreal)
+dispatcher.map("/Python" + ConfigLoader.OSCRevert, FunctionsLibary.PerforceRevert)
+dispatcher.map("/Python" + ConfigLoader.OSCSanatise, FunctionsLibary.SanatiseDirectory)
 dispatcher.set_default_handler(default_handler)
 
 
