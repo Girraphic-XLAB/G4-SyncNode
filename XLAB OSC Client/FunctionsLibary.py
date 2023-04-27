@@ -21,14 +21,14 @@ def ASCIITitle():
 
 
 #Generic console command function
-def RunConsoleCommand(int, str):
-    if int:
-        PrintLog(str)
-        subprocess.run(str)
+def RunConsoleCommand(num, cmd):
+    if num:
+        PrintLog(cmd)
+        subprocess.run(cmd)
 
 #Print String and log it into the log file
-def PrintLog(str):
-    print(str)
+def PrintLog(cmd):
+    print(cmd)
 
     #Is Logging enabled
     if ConfigLoader.EnableDebugging == 'True':
@@ -38,7 +38,7 @@ def PrintLog(str):
 
             #Write to the log file
             with open(os.getcwd() + '\\Logs\\' + datetime.datetime.now().strftime('%Y-%m-%d') + '.log', "a+") as text_file:
-                text_file.write(Now + ' > ' + str + '\n')
+                text_file.write(Now + ' > ' + cmd + '\n')
 
 
 #Perforce Sync
